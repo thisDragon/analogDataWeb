@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF8
+encoding//src/main/resources/config.properties=UTF-8
+encoding//src/main/resources/redis.properties=UTF-8
+encoding//src/test/java=UTF8
+encoding/<project>=ISO-8859-1

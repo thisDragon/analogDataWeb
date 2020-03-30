@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+  <meta charset="UTF-8">
+  <title>数据模拟</title>
+</head>
+<style type="text/css">
+  span{
+    display:-moz-inline-box;
+    display:inline-block;
+    width: 100px;
+    margin-left: 20px;
+  }
+  .marginLeft{
+    margin-left: 20px;
+  }
+
+</style>
+
+<body style="width: 100%;height: 100%">
+  <!-- 信息及配置-->
+  <div style="width:100%;height:40%">
+    <div style="float:left;width:33%;height:100%">
+      
+      <div style="display: inline-block;width:100%;height:50%;">
+        <span style="margin-top: 10px">中心地址:</span><input></input><br/><br/>
+        <span >账号:</span><input></input><br/><br/>
+        <span >密码:</span><input></input><br/><br/>
+        <button style="margin-left: 50px">登陆</button><button style="margin-left: 50px">位置上报</button>
+      </div>
+
+      <div style="width:100%;height:50%">
+        <br/>
+        <span>时间范围:</span><input></input>&nbsp;&nbsp;~&nbsp;&nbsp;<input></input>
+        <br/><br/>
+        <span>时间间隔:</span><input width="50px"></input>&nbsp;<text>分钟</text>
+        <br/><br/>
+        <label style="margin-left: 60px"><input name="reportMethod" type="radio" value="" />循环上报 </label> 
+        <label style="margin-left: 60px"><input name="reportMethod" type="radio" value="" />往返上报 </label> 
+      </div>
+    </div>
+    <div style="float:left;width:33%;height:100%">
+      <div style="width:85%;height:50%;background:gray;">
+        <br/>
+          <span>账号:</span><text >chennan</text><br/><br/>
+          <span>集团id:</span><text >wedsfresfdrhydrtjutyikjhy</text><br/><br/>
+          <span>集团名称:</span><text >测试集团名称</text><br/><br/>
+          <span>上报地址:</span><text >http://192.168.2.68:6661</text><br/><br/>
+      </div>
+      <div style="width:100%;height:50%">
+        <text class="marginLeft">终端号码:</text><br/>
+        <textarea style="width:85%;height:85%" class="marginLeft"></textarea><br/>
+      </div>
+    </div>
+    <div style="float:left;width:33%;height:100%">
+      <div style="width:85%;height:50%;background:gray;">
+        <br/>
+        <span>位置上报:</span><text style="color:green">已开启</text><br/><br/>
+        <span>事件上报:</span><text style="color:green">已开启</text><br/><br/>
+        <span>巡检上报:</span><text style="color:green">已开启</text><br/><br/>
+        <span>任务上报:</span><text >未开启</text><br/><br/>
+      </div>
+      <div style="width:100%;height:50%">
+        <text class="marginLeft">位置:</text><br/>
+        <textarea style="width:85%;height:85%" class="marginLeft"></textarea><br/>
+      </div>
+    </div>
+  </div>
+  
+  <!--上报 -->
+  <div style=" width:100%;height:30%">
+    <div style="float:left;width:35%;height:100%">
+      <b style="font-size: 18px" class="marginLeft">事件、巡检上报模拟</b><br/>
+      <text class="marginLeft">备注:</text><br/>
+      <textarea style="width:85%;height:50%" class="marginLeft"></textarea><br/>
+      <label style="margin-left: 60px"><input name="resource" type="radio" value="" />视频 </label> 
+      <label style="margin-left: 60px"><input name="resource" type="radio" value="" />图片 </label> 
+      <br/>
+      <button style="margin-left: 50px">事件上报</button><button style="margin-left: 50px">巡检反馈</button>
+    </div>
+
+    <div style="float:left;width:64%;height:100%">
+      <b style="font-size: 18px" class="marginLeft">协同任务模拟</b>
+      <br/><br/>
+      <span>协同名称:</span><input></input><span>负责人:</span><input></input><span>任务有效期:</span><input></input>
+      <br/><br/>
+      <text class="marginLeft">参与人:</text>  <text style="margin-left: 400px">任务内容:</text><br/>
+      <textarea style="width:35%;height:35%" class="marginLeft"></textarea> <textarea style="width:35%;height:35%" class="marginLeft"></textarea>
+      <button style="margin-left: 400px">任务上报</button>
+    </div>
+  </div>
+  
+  <!-- 日志-->
+  <div style=" width:100%;height:30%">
+    <span>控制台:</span><br/>
+    <textarea style="width:100%;height:90%">
+      控制台内容
+    </textarea>
+
+  </div>
+</body>
+
+</html>

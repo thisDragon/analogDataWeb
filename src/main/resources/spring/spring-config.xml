@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- 1.配置数据库相关参数properties的属性：${url} -->
+	<bean class="com.analog.data.util.EncryptPropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<!-- <value>classpath:jdbc.properties</value> -->
+				<!-- <value>classpath:config.properties</value> -->
+				<value>classpath:redis.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding" value="UTF-8" />
+	</bean>
+	
+	<!-- 扫描entity包下所有使用注解的类型 -->
+	<context:component-scan base-package="com.analog.data.entity" />
+    
+    <!-- item1 -->
+    <bean id="event1" class="com.analog.data.entity.Event">
+    	<property name="interval" value="600000"/>  
+    	<property name="remark" value="事件测试X1"/>
+    </bean>
+    
+    <bean id="patrol1" class="com.analog.data.entity.Patrol">
+    	<property name="interval" value="600000"/>  
+    	<property name="remark" value="巡查上报X1"/>
+    </bean>
+    
+    <bean id="task1" class="com.analog.data.entity.Task">
+    	<property name="taskTitle" value="任务标题X1"/>
+    	<property name="player" value="1064917614348;1064974179076"/>  
+    	<property name="context" value="内容X1"/>
+    	<property name="interval" value="600000"/>
+    </bean>
+    
+    <bean id="items1" class="com.analog.data.entity.Item">
+    	<property name="tel" value="13696812203;13696812204"/>  
+    	<property name="path" value="119.286567,26.075433;119.287366,26.075454;119.288165,26.075419;119.288948,26.075539;119.289654,26.075846;119.290244,26.076330;119.290937,26.076686;119.291669,26.076976;119.292391,26.077289;119.293108,26.077605;119.293806,26.077957;119.294493,26.078322"/>
+    	<property name="event" ref="event1" />
+    	<property name="patrol" ref="patrol1" />
+    	<property name="task" ref="task1" />
+    </bean>
+    <!-- item1 -->
+    
+    <!-- item2 -->
+    <bean id="event2" class="com.analog.data.entity.Event">
+    	<property name="interval" value="1600000"/>  
+    	<property name="remark" value="事件测试X2"/>
+    </bean>
+    
+    <bean id="patrol2" class="com.analog.data.entity.Patrol">
+    	<property name="interval" value="1600000"/>  
+    	<property name="remark" value="巡查上报X2"/>
+    </bean>
+    
+    <bean id="task2" class="com.analog.data.entity.Task">
+    	<property name="taskTitle" value="任务标题X2"/>
+    	<property name="player" value="1064917614348;1064974179076"/>  
+    	<property name="context" value="内容X2"/>
+    	<property name="interval" value="1600000"/>
+    </bean>
+    
+    <bean id="items2" class="com.analog.data.entity.Item">
+    	<property name="tel" value="1410330437022;18065165246"/>  
+    	<property name="path" value="119.309704,26.055702;119.309558,26.056411;119.309411,26.057120;119.309265,26.057829;119.309174,26.058544;119.309091,26.059261;119.309006,26.059978;119.308911,26.060694;119.308816,26.061410;119.308728,26.062126;119.308640,26.062843;119.308552,26.063560;119.308464,26.064277;119.308372,26.064993;119.308275,26.065709;119.308183,26.066424;119.308102,26.067141;119.308016,26.067858;119.307930,26.068574;119.307843,26.069291;119.307756,26.070008;119.307669,26.070724;119.307579,26.071441;119.307489,26.072157;119.307398,26.072873;119.307304,26.073589;119.307209,26.074305;119.307115,26.075021;119.306983,26.075730;119.306785,26.076429;119.306594,26.077129;119.306412,26.077831;119.306229,26.078533;119.306047,26.079235;119.305873,26.079937;119.305680,26.080638;119.305488,26.081338;119.305296,26.082038;119.305120,26.082740;119.304960,26.083446;119.304775,26.084148;119.304588,26.084849;119.304405,26.085551;119.304227,26.086254;119.304048,26.086957;119.303870,26.087660;119.303691,26.088362;119.303506,26.089064;119.303315,26.089763;119.303062,26.090445;119.302762,26.091113"/>
+    	<property name="event" ref="event2" />
+    	<property name="patrol" ref="patrol2" />
+    	<property name="task" ref="task2" />
+    </bean>
+    <!-- item2 -->
+    
+    <bean id="dataConfig" class="com.analog.data.entity.DataConfig">
+    	<property name="use" value="false"/>
+    	<property name="centerAddr" value="http://192.168.2.68:6661/center-web3.0/"/>  
+    	<property name="user" value="test003"/>
+    	<property name="password" value="88888888"/>
+    	<property name="polling" value="0"/>
+    	<property name="interval" value="600000"/>
+    	<property name="items">
+    		<list>
+	    		<ref bean="items1"/>
+	    		<ref bean="items2"/>
+    		</list>
+    	</property>
+    </bean>
+    
+</beans>
